@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('data_personals', function (Blueprint $table) {
             $table->id();
+            $table->string("image_path");
+            $table->string("username");
+            $table->string("email")->unique();
+            $table->string("phone_number");
             $table->timestamps();
         });
     }
