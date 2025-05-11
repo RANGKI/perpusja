@@ -6,5 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class DataPersonal extends Model
 {
-    //
+    protected $table = 'data_personals';
+
+    protected $primaryKey = 'id'; 
+
+    protected $fillable = [
+        'image_path',
+        'username',
+        'email',
+        'phone_number'
+    ];
 }
