@@ -8,5 +8,5 @@ Route::get('/', function () {
 });
 
 Route::controller(DataPersonalController::class)->group(function() {
-    Route::get('/admin/data_personal','view');
+    Route::get('/admin/data_personal','show');
 });
