@@ -40,10 +40,18 @@
             </ul>
         </div>
 
-        <div class="absolute bottom-6 left-6 flex items-center">
-            <div class="w-10 h-10 rounded-full bg-gray-300 mr-3"></div>
-            <span class="text-xl font-semibold">Goku</span>
-        </div>
+        <div class="absolute bottom-6 left-6 flex items-center space-x-3">
+    <div class="w-10 h-10 rounded-full bg-gray-300"></div>
+    <span class="text-xl font-semibold">{{ session('username') }}</span>
+
+    <form action="{{ url('/logout') }}" method="POST">
+        @csrf
+        <button type="submit" title="Logout">
+            <i class="fa-solid fa-right-from-bracket text-white text-xl hover:text-red-400"></i>
+        </button>
+    </form>
+</div>
+
         </nav>
 
         <!-- Main Content -->
