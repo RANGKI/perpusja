@@ -28,5 +28,6 @@ Route::controller(DataAdminController::class)->group(function() {
     Route::get('/admin/data_admin','show');
     Route::get('/admin/data_admin/{id}/detail','show_detail');
     Route::put('/admin/data_admin/{id}/update','update_data');
-    Route::put('/admin/data_admin/{id}/create','create_data');
+    Route::get('/admin/data_admin/create','show_create');
+    Route::post('/admin/data_admin/create','create_data');
 });

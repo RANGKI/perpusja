@@ -20,7 +20,7 @@
         <a href="{{ url('/admin/data_admin') }}" class="text-blue-500 hover:underline">Kembali</a>
       </div>
 
-      <form method="POST" action="{{ url('/admin/data_admin') }}">
+      <form method="POST" action="{{ url('/admin/data_admin/create') }}">
         @csrf
 
         <div class="mb-4">

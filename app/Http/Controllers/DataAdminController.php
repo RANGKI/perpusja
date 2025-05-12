@@ -34,4 +34,26 @@ class DataAdminController extends Controller
 
         return redirect('/admin/data_admin/' . $id . '/detail')->with('success', 'Data updated!');
     }
+
+    public function show_create() {
+        return view('admin_dashboard.data_admins.create');
+    }
+
+    public function create_data(Request $request) {
+        $validated = $request->validate([
+            'username' => 'required|string|max:255|unique:data_admin,username',
+            'email' => 'required|email|max:255|unique:data_admin,email',
+            'password' => 'required|string|min:6',
+        ]);
+
+        
+        DataAdmin::create([
+            'image_path' => 'default.jpg', // Default image path, adjust as needed
+            'username' => $validated['username'],
+            'email' => $validated['email'],
+            'password' => bcrypt($validated['password']),
+        ]);
+
+        return redirect('/admin/data_admin')->with('success', 'Admin created successfully!');
+    }
 }
