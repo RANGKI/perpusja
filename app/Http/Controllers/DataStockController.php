@@ -11,4 +11,9 @@ class DataStockController extends Controller
         $books = DataStock::all();
         return view('admin_dashboard.data_stocks.data_stock',['books' => $books]);
     }
+
+    public function show_detail($id) {
+        $book = DataStock::findOrFail($id);
+        return view('admin_dashboard.data_stocks.detail',['book' => $book]);
+    }
 }
