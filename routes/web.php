@@ -27,4 +27,5 @@ Route::get('/admin/data_pinjaman',[DataPinjamanController::class,'show']);
 Route::controller(DataAdminController::class)->group(function() {
     Route::get('/admin/data_admin','show');
     Route::get('/admin/data_admin/{id}/detail','show_detail');
+    Route::put('/admin/data_admin/{id}/update','update_data');
 });
