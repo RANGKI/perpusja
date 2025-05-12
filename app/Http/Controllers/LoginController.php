@@ -41,4 +41,12 @@ class LoginController extends Controller
 
         return back()->with('error', 'The provided credentials do not match our records.')->onlyInput('email');
     }
+
+    public function logout(Request $request) {
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        Session::flush();
+
+        return redirect('/login')->with('logout', 'Logout successfully');
+    }
 }
