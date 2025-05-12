@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('data_admin', function (Blueprint $table) {
             $table->id();
+            $table->string('image_path');
+            $table->string('username');
+            $table->string('email');
+            $table->string('password');
             $table->timestamps();
         });
     }
