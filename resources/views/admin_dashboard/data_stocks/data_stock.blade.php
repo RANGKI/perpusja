@@ -28,7 +28,7 @@
               @endif
             </td>
             <td class="px-6 py-4">
-              <a href="{{ url('/admin/data_stock/' . $book->id . '/edit') }}" class="text-gray-800 hover:text-indigo-600">
+              <a href="{{ url('/admin/data_stock/' . $book->id . '/detail') }}" class="text-gray-800 hover:text-indigo-600">
                 ✎
               </a>
             </td>
