@@ -18,22 +18,22 @@
         <div class="w-full">
             <ul class="space-y-6">
             <li>
-                <a href="/data_personal" class="flex items-center bg-white text-black text-xl px-4 py-4 mx-2 rounded-lg shadow hover:bg-gray-100 transition-all">
+                <a href="/admin/data_personal" class="flex items-center bg-white text-black text-xl px-4 py-4 mx-2 rounded-lg shadow hover:bg-gray-100 transition-all">
                 <i class="fa-solid fa-user mr-3 text-2xl"></i> Data Personal
                 </a>
             </li>
             <li>
-                <a href="#stock" class="flex items-center bg-white text-black text-xl px-4 py-4 mx-2 rounded-lg shadow hover:bg-gray-100 transition-all">
+                <a href="/admin/data_stock" class="flex items-center bg-white text-black text-xl px-4 py-4 mx-2 rounded-lg shadow hover:bg-gray-100 transition-all">
                 <i class="fa-solid fa-store mr-3 text-2xl"></i> Data Stock
                 </a>
             </li>
             <li>
-                <a href="#pinjaman" class="flex items-center bg-white text-black text-xl px-4 py-4 mx-2 rounded-lg shadow hover:bg-gray-100 transition-all">
+                <a href="/admin/data_pinjaman" class="flex items-center bg-white text-black text-xl px-4 py-4 mx-2 rounded-lg shadow hover:bg-gray-100 transition-all">
                 <i class="fa-solid fa-lock mr-3 text-2xl"></i> Data Pinjaman
                 </a>
             </li>
             <li>
-                <a href="/data_admin" class="flex items-center bg-white text-black text-xl px-4 py-4 mx-2 rounded-lg shadow hover:bg-gray-100 transition-all">
+                <a href="/admin/data_admin" class="flex items-center bg-white text-black text-xl px-4 py-4 mx-2 rounded-lg shadow hover:bg-gray-100 transition-all">
                 <i class="fa-solid fa-gears mr-3 text-2xl"></i> Admins
                 </a>
             </li>
