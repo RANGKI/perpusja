@@ -16,4 +16,26 @@ class DataStockController extends Controller
         $book = DataStock::findOrFail($id);
         return view('admin_dashboard.data_stocks.detail',['book' => $book]);
     }
+
+    public function update_data(Request $request, $id) {
+        
+        $validated = $request->validate([
+            'nama_buku' => 'required|string|max:255',
+            'jumlah' => 'required|integer',
+            'kode_buku' => 'required|string|max:20',
+        ]);
+
+        $book = DataStock::findOrFail($id);
+
+        $book->update([
+            'nama_buku' => $validated['nama_buku'],
+            'jumlah' => $validated['jumlah'],
+            'kode_buku' => $validated['kode_buku'],
+        ]);
+
+        return redirect('/admin/data_stock/' . $id . '/detail')->with('success', 'Data updated!');
+    }
+
+
+    
 }
