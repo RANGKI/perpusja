@@ -9,6 +9,6 @@ class DataStockController extends Controller
 {
     public function show() {
         $books = DataStock::all();
-        return view('admin_dashboard.data_stocks.stcok',['books' => $books]);
+        return view('admin_dashboard.data_stocks.data_stock',['books' => $books]);
     }
 }
