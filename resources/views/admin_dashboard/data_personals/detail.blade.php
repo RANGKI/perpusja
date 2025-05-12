@@ -9,7 +9,7 @@
     <!-- Profile Image -->
     <div class="mb-6 md:mb-0 md:mr-8 flex justify-center">
       <div class="w-40 h-40 border rounded-lg flex items-center justify-center">
-        <img src="{{ asset('storage/' . $user->path_profile) }}" alt="User profile" class="w-24 h-24 object-cover rounded-full">
+        <img src="{{ asset('storage/' . $user->image_profile) }}" alt="User profile" class="w-24 h-24 object-cover rounded-full">
       </div>
     </div>
 
@@ -36,7 +36,7 @@
 
         <div class="mb-4">
           <label class="block font-semibold mb-1">No. Telepon</label>
-          <input type="text" name="no_telepon" value="{{ $user->no_telepon }}" class="w-full px-4 py-2 border rounded focus:outline-none">
+          <input type="text" name="no_telepon" value="{{ $user->phone_number }}" class="w-full px-4 py-2 border rounded focus:outline-none">
         </div>
 
         <div class="mb-6">
