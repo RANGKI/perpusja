@@ -17,16 +17,16 @@
     <div class="w-full md:w-1/2">
       <div class="flex justify-between items-center mb-6">
         <h2 class="text-xl font-bold">Keterangan Pengguna</h2>
-        <a href="{{ url('/data_personal') }}" class="text-blue-500 hover:underline">Kembali</a>
+        <a href="{{ url('/admin/data_personal/') }}" class="text-blue-500 hover:underline">Kembali</a>
       </div>
 
-      <form method="POST" action="{{ url('/data_personal/' . $user->account_id . '/update') }}">
+      <form method="POST" action="{{ url('/admin/data_personal/' . $user->id . '/update') }}">
         @csrf
         @method('PUT')
 
         <div class="mb-4">
           <label class="block font-semibold mb-1">Nama Pengguna</label>
-          <input type="text" name="username" value="{{ '@' . $user->username }}" class="w-full px-4 py-2 border rounded focus:outline-none">
+          <input type="text" name="username" value="{{ $user->username }}" class="w-full px-4 py-2 border rounded focus:outline-none">
         </div>
 
         <div class="mb-4">
@@ -36,7 +36,7 @@
 
         <div class="mb-4">
           <label class="block font-semibold mb-1">No. Telepon</label>
-          <input type="text" name="no_telepon" value="{{ $user->phone_number }}" class="w-full px-4 py-2 border rounded focus:outline-none">
+          <input type="text" name="phone_number" value="{{ $user->phone_number }}" class="w-full px-4 py-2 border rounded focus:outline-none">
         </div>
 
         <div class="mb-6">

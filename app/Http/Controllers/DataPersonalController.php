@@ -16,4 +16,27 @@ class DataPersonalController extends Controller
         $user = DataPersonal::findOrFail($id);
         return view('admin_dashboard.data_personals.detail', ['user' => $user]);
     }
+
+    public function update_data(Request $request, $id)
+    {
+        
+        $validated = $request->validate([
+            'username' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'phone_number' => 'required|string|max:20',
+            'password' => 'required|string|min:6',
+        ]);
+
+        
+        $user = DataPersonal::findOrFail($id);
+        $user->update([
+            'username' => $validated['username'],
+            'email' => $validated['email'],
+            'phone_number' => $validated['phone_number'],
+            'password' => bcrypt($validated['password']), 
+        ]);
+
+        return redirect('/admin/data_personal/' . $id . '/detail')->with('success', 'Data updated!');
+    }
+
 }

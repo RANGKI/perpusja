@@ -10,5 +10,5 @@ Route::get('/', function () {
 Route::controller(DataPersonalController::class)->group(function() {
     Route::get('/admin/data_personal','show');
     Route::get('/admin/data_personal/{id}/detail','show_detail');
-    Route::post('/admin/data_personal/{id}/update','update_data');
+    Route::put('/admin/data_personal/{id}/update','update_data');
 });

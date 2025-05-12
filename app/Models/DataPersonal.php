@@ -14,6 +14,7 @@ class DataPersonal extends Model
         'image_path',
         'username',
         'email',
+        'password',
         'phone_number'
     ];
 }
