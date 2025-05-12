@@ -16,4 +16,22 @@ class DataAdminController extends Controller
         $admin = DataAdmin::findOrFail($id);
         return view('admin_dashboard.data_admins.detail',['admin' => $admin]);
     }
+
+    public function update_data(Request $request, $id) {
+        $validated = $request->validate([
+            'username' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'password' => 'required|string|min:6',
+        ]);
+
+        
+        $user = DataAdmin::findOrFail($id);
+        $user->update([
+            'username' => $validated['username'],
+            'email' => $validated['email'],
+            'password' => bcrypt($validated['password']), 
+        ]);
+
+        return redirect('/admin/data_personal/' . $id . '/detail')->with('success', 'Data updated!');
+    }
 }
