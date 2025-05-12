@@ -35,4 +35,5 @@ Route::controller(DataAdminController::class)->group(function() {
 
 Route::controller(LoginController::class)->group(function() {
     Route::get('/login','show');
+    Route::post('/login','login');
 });
