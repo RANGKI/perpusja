@@ -21,7 +21,7 @@
             <td class="px-6 py-4">
               <img src="{{ asset('storage/' . $data->user->image_path) }}" alt="Profile Image" class="w-12 h-12 object-cover rounded-full">
             </td>
-            <td class="px-6 py-4">{{ '@' . $data->user->username }}</td>
+            <td class="px-6 py-4">{{ $data->user->username }}</td>
             <td class="px-6 py-4">{{ $data->user->email }}</td>
             <td class="px-6 py-4">{{ $data->book->nama_buku }}</td>
           </tr>
