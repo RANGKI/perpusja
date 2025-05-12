@@ -16,4 +16,9 @@ class DataStock extends Model
         'jumlah',
         'kode_buku'
     ];
+
+    public function pinjaman() {
+        return $this->hasMany(DataPinjaman::class, 'book_id');
+    }
+
 }
