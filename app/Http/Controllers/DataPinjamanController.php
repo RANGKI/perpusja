@@ -9,6 +9,6 @@ class DataPinjamanController extends Controller
 {
     public function show() {
         $pinjaman = DataPinjaman::with(['user', 'book'])->get();
-        return view('admin.data_pinjaman', compact('pinjaman'));
+        return view('admin_dashboard.data_pinjaman.data_pinjaman', compact('pinjaman'));
     }
 }
