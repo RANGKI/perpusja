@@ -17,4 +17,5 @@ Route::controller(DataPersonalController::class)->group(function() {
 Route::controller(DataStockController::class)->group(function() {
     Route::get('/admin/data_stock','show');
     Route::get('/admin/data_stock/{id}/detail','show_detail');
+    Route::put('/admin/data_stock/{id}/update','update_data');
 });
