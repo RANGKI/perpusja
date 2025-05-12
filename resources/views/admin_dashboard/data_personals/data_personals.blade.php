@@ -26,7 +26,7 @@
             <td class="px-6 py-4">{{ $user->email }}</td>
             <td class="px-6 py-4">{{ $user->phone_number }}</td>
             <td class="px-6 py-4">
-              <a href="{{ url('/admin/data_personal' . $user->id . '/detail') }}" class="text-indigo-600 hover:underline">
+              <a href="{{ url('/admin/data_personal/' . $user->id . '/detail') }}" class="text-indigo-600 hover:underline">
                 View Details
               </a>
             </td>
