@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('data_stock', function (Blueprint $table) {
             $table->id();
+            $table->string("image_path");
+            $table->string("nama_buku");
+            $table->integer("jumlah");
+            $table->string("kode_buku")->unique();
             $table->timestamps();
         });
     }
