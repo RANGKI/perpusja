@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DataStock;
 use Illuminate\Http\Request;
 
 class DataStockController extends Controller
 {
-    //
+    public function show() {
+        $books = DataStock::all();
+        return view('admin_dashboard.data_stocks.stcok',['books' => $books]);
+    }
 }
