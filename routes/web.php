@@ -22,3 +22,7 @@ Route::controller(DataStockController::class)->group(function() {
 });
 
 Route::get('/admin/data_pinjaman',[DataPinjamanController::class,'show']);
+
+Route::controller(DataStockController::class)->group(function() {
+    Route::get('/admin/data_admin','show');
+});
