@@ -11,4 +11,9 @@ class DataAdminController extends Controller
         $admins = DataAdmin::all();
         return view('admin_dashboard.data_admins.data_admin',['admins' => $admins]);
     }
+
+    public function show_detail($id) {
+        $admin = DataAdmin::findOrFail($id);
+        return view('admin_dashboard.data_admins.detail',['admin' => $admin]);
+    }
 }
