@@ -4,6 +4,7 @@ use App\Http\Controllers\DataAdminController;
 use App\Http\Controllers\DataPersonalController;
 use App\Http\Controllers\DataPinjamanController;
 use App\Http\Controllers\DataStockController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -30,4 +31,8 @@ Route::controller(DataAdminController::class)->group(function() {
     Route::put('/admin/data_admin/{id}/update','update_data');
     Route::get('/admin/data_admin/create','show_create');
     Route::post('/admin/data_admin/create','create_data');
+});
+
+Route::controller(LoginController::class)->group(function() {
+    Route::get('/login','show');
 });
