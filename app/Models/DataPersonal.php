@@ -17,4 +17,9 @@ class DataPersonal extends Model
         'password',
         'phone_number'
     ];
+
+    public function pinjaman() {
+        return $this->hasMany(DataPinjaman::class, 'user_id');
+    }
+
 }
