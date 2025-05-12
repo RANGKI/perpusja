@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DataPersonalController;
+use App\Http\Controllers\DataPinjamanController;
 use App\Http\Controllers\DataStockController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,3 +20,5 @@ Route::controller(DataStockController::class)->group(function() {
     Route::get('/admin/data_stock/{id}/detail','show_detail');
     Route::put('/admin/data_stock/{id}/update','update_data');
 });
+
+Route::get('/admin/data_pinjaman',[DataPinjamanController::class,'show']);
