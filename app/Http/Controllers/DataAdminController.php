@@ -32,6 +32,6 @@ class DataAdminController extends Controller
             'password' => bcrypt($validated['password']), 
         ]);
 
-        return redirect('/admin/data_personal/' . $id . '/detail')->with('success', 'Data updated!');
+        return redirect('/admin/data_admin/' . $id . '/detail')->with('success', 'Data updated!');
     }
 }
