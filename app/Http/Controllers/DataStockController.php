@@ -6,6 +6,8 @@ use App\Models\DataStock;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use App\Exports\StockExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class DataStockController extends Controller
 {
@@ -96,4 +98,7 @@ class DataStockController extends Controller
 
     return redirect('/admin/data_stock')->with('success', 'Book added successfully!');
 }
+    public function export() {
+        return Excel::download(new StockExport, 'data_stock.xlsx');
+    }
 }

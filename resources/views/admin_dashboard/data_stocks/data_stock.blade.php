@@ -4,8 +4,15 @@
 
 @section('content')
   <h1 class="text-5xl font-bold mb-6 text-center">Data Stock</h1>
+
   {{-- Success message --}}
   @include('components.success')
+  <div class="flex justify-end mb-4">
+    <a href="{{route('stock.export')}}"
+       class="inline-flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg shadow">
+        📥 Download Excel
+    </a>
+</div>
   <div class="overflow-x-auto">
     <table class="min-w-full bg-white rounded shadow text-left">
       <thead class="bg-indigo-600 text-white">
