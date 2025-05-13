@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 class DataAdminController extends Controller
 {
     public function show() {
-        $admins = DataAdmin::all();
+        $admins = DataAdmin::paginate(10);
         return view('admin_dashboard.data_admins.data_admin',['admins' => $admins]);
     }
 
