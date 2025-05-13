@@ -13,7 +13,7 @@
           <th class="px-6 py-3">Username</th>
           <th class="px-6 py-3">Email</th>
           <th class="px-6 py-3">No. Telepon</th>
-          <th class="px-6 py-3">Detail</th>
+          <th class="px-6 py-3">Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -26,9 +26,18 @@
             <td class="px-6 py-4">{{ $user->email }}</td>
             <td class="px-6 py-4">{{ $user->phone_number }}</td>
             <td class="px-6 py-4">
-              <a href="{{ url('/admin/data_personal/' . $user->id . '/detail') }}" class="text-indigo-600 hover:underline">
-                View Details
-              </a>
+              <div class="flex space-x-4 items-center">
+                <a href="{{ url('/admin/data_personal/' . $user->id . '/detail') }}" class="text-indigo-600 hover:underline">
+                  View Details
+                </a>
+                <form action="{{ url('/admin/data_personal/' . $user->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this user?');">
+                  @csrf
+                  @method('DELETE')
+                  <button type="submit" class="text-red-600 hover:underline">
+                    Remove
+                  </button>
+                </form>
+              </div>
             </td>
           </tr>
         @endforeach
