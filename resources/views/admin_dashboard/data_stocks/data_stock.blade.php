@@ -4,7 +4,8 @@
 
 @section('content')
   <h1 class="text-5xl font-bold mb-6 text-center">Data Stock</h1>
-
+  {{-- Success message --}}
+  @include('components.success')
   <div class="overflow-x-auto">
     <table class="min-w-full bg-white rounded shadow text-left">
       <thead class="bg-indigo-600 text-white">

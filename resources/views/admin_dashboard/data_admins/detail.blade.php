@@ -42,7 +42,7 @@
         </div>
 
         <div class="mb-6">
-          <label class="block font-semibold mb-1">Password</label>
+          <label class="block font-semibold mb-1">Password (Min : 6)</label>
           <input type="password" name="password" value="{{ $admin->password }}" class="w-full px-4 py-2 border rounded focus:outline-none">
         </div>
 
