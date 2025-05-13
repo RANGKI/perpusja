@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 class DataPersonalController extends Controller
 {
     public function show() {
-        $users = DataPersonal::all();
+        $users = DataPersonal::paginate(10);
         return view('admin_dashboard.data_personals.data_personals',['users' => $users]);
     }
 
