@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\DataStock;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class DataStockController extends Controller
@@ -19,23 +20,42 @@ class DataStockController extends Controller
     }
 
     public function update_data(Request $request, $id) {
+    // Validate the inputs
+    $validated = $request->validate([
+        'nama_buku' => 'required|string|max:255',
+        'jumlah' => 'required|integer',
+        'kode_buku' => 'required|string|max:20',
+        'image_path' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048', // Validate the image input
+    ]);
+
+    // Find the book record
+    $book = DataStock::findOrFail($id);
+
+    // Handle the image upload if present
+    if ($request->hasFile('image_path')) {
+        // Delete old image if it exists
+        if ($book->image_path && Storage::exists('public/' . $book->image_path)) {
+            Storage::delete('public/' . $book->image_path);
+        }
+
+        // Store the new image and get the path
+        $imagePath = $request->file('image_path')->store('image/book_cover','public');
         
-        $validated = $request->validate([
-            'nama_buku' => 'required|string|max:255',
-            'jumlah' => 'required|integer',
-            'kode_buku' => 'required|string|max:20',
-        ]);
-
-        $book = DataStock::findOrFail($id);
-
-        $book->update([
-            'nama_buku' => $validated['nama_buku'],
-            'jumlah' => $validated['jumlah'],
-            'kode_buku' => $validated['kode_buku'],
-        ]);
-
-        return redirect('/admin/data_stock/' . $id . '/detail')->with('success', 'Data updated!');
+        // Update the image path in the database
+        $book->image_path = $imagePath;
     }
+
+    // Update other fields
+    $book->update([
+        'nama_buku' => $validated['nama_buku'],
+        'jumlah' => $validated['jumlah'],
+        'kode_buku' => $validated['kode_buku'],
+    ]);
+
+    // Redirect with success message
+    return redirect('/admin/data_stock/' . $id . '/detail')->with('success', 'Data updated!');
+}
+
 
     public function delete_data($id) {
         $book = DataStock::findOrFail($id);
