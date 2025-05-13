@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\DataStock;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class DataStockController extends Controller
 {
@@ -49,20 +50,30 @@ class DataStockController extends Controller
     }
     
     public function create_data(Request $request) {
-        $validated = $request->validate([
-            'nama_buku' => 'required|string|max:255|unique:data_admin,username',
-            'jumlah' => 'required|integer',
-            'kode_buku' => 'required|string|min:6',
-        ]);
+    $validated = $request->validate([
+        'nama_buku' => 'required|string|max:255|unique:data_stock,nama_buku',
+        'jumlah' => 'required|integer',
+        'kode_buku' => 'required|string|min:6',
+        'image_path' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
+    ]);
 
-        
-        DataStock::create([
-            'image_path' => 'default.jpg',
-            'nama_buku' => $validated['nama_buku'],
-            'jumlah' => $validated['jumlah'],
-            'kode_buku' => $validated['kode_buku'],
-        ]);
-
-        return redirect('/admin/data_stock')->with('success', 'Book added successfully!');
+    // Handle image upload with unique filename
+    if ($request->hasFile('image_path')) {
+        $file = $request->file('image_path');
+        $filename = Str::uuid() . '.' . $file->getClientOriginalExtension(); // generate unique name
+        $path = $file->storeAs('image/book_cover', $filename, 'public');
+    } else {
+        $path = 'default.jpg';
     }
+
+    // Create the book entry
+    DataStock::create([
+        'image_path' => $path,
+        'nama_buku' => $validated['nama_buku'],
+        'jumlah' => $validated['jumlah'],
+        'kode_buku' => $validated['kode_buku'],
+    ]);
+
+    return redirect('/admin/data_stock')->with('success', 'Book added successfully!');
+}
 }
