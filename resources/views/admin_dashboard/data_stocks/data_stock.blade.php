@@ -44,4 +44,10 @@
       </tbody>
     </table>
   </div>
+
+  <div class="mt-10 flex justify-center">
+    <a href="{{ url('/admin/data_stock/create') }}" class="flex items-center gap-2 px-6 py-3 bg-indigo-700 hover:bg-indigo-800 text-white font-semibold rounded-2xl shadow-lg">
+      <span class="text-2xl">+</span> Add Book
+    </a>
+  </div>
 @endsection

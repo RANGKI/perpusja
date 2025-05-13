@@ -48,7 +48,7 @@ class DataAdminController extends Controller
 
         
         DataAdmin::create([
-            'image_path' => 'default.jpg', // Default image path, adjust as needed
+            'image_path' => 'default.jpg', 
             'username' => $validated['username'],
             'email' => $validated['email'],
             'password' => bcrypt($validated['password']),

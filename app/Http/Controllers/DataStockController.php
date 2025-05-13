@@ -44,6 +44,25 @@ class DataStockController extends Controller
         }
     }
 
-
+    public function show_create() {
+        return view('admin_dashboard.data_stocks.create');
+    }
     
+    public function create_data(Request $request) {
+        $validated = $request->validate([
+            'nama_buku' => 'required|string|max:255|unique:data_admin,username',
+            'jumlah' => 'required|integer',
+            'kode_buku' => 'required|string|min:6',
+        ]);
+
+        
+        DataStock::create([
+            'image_path' => 'default.jpg',
+            'nama_buku' => $validated['nama_buku'],
+            'jumlah' => $validated['jumlah'],
+            'kode_buku' => $validated['kode_buku'],
+        ]);
+
+        return redirect('/admin/data_stock')->with('success', 'Book added successfully!');
+    }
 }
