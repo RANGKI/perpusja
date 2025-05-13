@@ -10,8 +10,8 @@ use Illuminate\Support\Str;
 class DataStockController extends Controller
 {
     public function show() {
-        $books = DataStock::all();
-        return view('admin_dashboard.data_stocks.data_stock',['books' => $books]);
+        $books = DataStock::paginate(10); // Paginate with 10 items per page
+        return view('admin_dashboard.data_stocks.data_stock', compact('books'));
     }
 
     public function show_detail($id) {

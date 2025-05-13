@@ -33,16 +33,21 @@
                   ✎
                 </a>
                 <form onsubmit="event.preventDefault(); window.dispatchEvent(new CustomEvent('open-delete-confirm', { detail: { action: this } }))" method="POST" action="{{ url('/admin/data_stock/' . $book->id) }}">
-                      @csrf
-                      @method('DELETE')
-                      <button type="submit" class="text-red-600 hover:underline">Remove</button>
-                  </form>
+                  @csrf
+                  @method('DELETE')
+                  <button type="submit" class="text-red-600 hover:underline">Remove</button>
+                </form>
               </div>
             </td>
           </tr>
         @endforeach
       </tbody>
     </table>
+  </div>
+
+  <!-- Pagination Links -->
+  <div class="mt-6 flex justify-center">
+    {{ $books->links() }}
   </div>
 
   <div class="mt-10 flex justify-center">
