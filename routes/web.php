@@ -37,6 +37,7 @@ Route::middleware('auth.session')->group(function () {
     });
 
     Route::get('/admin/data_pinjaman', [DataPinjamanController::class, 'show'])->name('pinjaman.show');
+    Route::get('/admin/data_pinjaman/export', [DataPinjamanController::class, 'export'])->name('pinjaman.export');
 
     Route::controller(DataAdminController::class)->group(function() {
         Route::get('/admin/data_admin', 'show')->name('admin.show');

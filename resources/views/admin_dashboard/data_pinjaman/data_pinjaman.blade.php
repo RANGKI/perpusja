@@ -5,6 +5,13 @@
 @section('content')
   <h1 class="text-5xl font-bold mb-6 text-center">Data Pinjaman</h1>
 
+  <div class="flex justify-end mb-4">
+    <a href="{{route('pinjaman.export')}}"
+       class="inline-flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg shadow">
+        📥 Download Excel
+    </a>
+</div>
+
   @if ($pinjaman->isEmpty())
       <p class="text-center text-gray-600 mt-4">No loan data available.</p>
   @else
