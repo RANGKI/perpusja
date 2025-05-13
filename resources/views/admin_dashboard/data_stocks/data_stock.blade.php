@@ -28,9 +28,16 @@
               @endif
             </td>
             <td class="px-6 py-4">
-              <a href="{{ url('/admin/data_stock/' . $book->id . '/detail') }}" class="text-gray-800 hover:text-indigo-600">
-                ✎
-              </a>
+              <div class="flex space-x-4 items-center">
+                <a href="{{ url('/admin/data_stock/' . $book->id . '/detail') }}" class="text-gray-800 hover:text-indigo-600">
+                  ✎
+                </a>
+                <form onsubmit="event.preventDefault(); window.dispatchEvent(new CustomEvent('open-delete-confirm', { detail: { action: this } }))" method="POST" action="{{ url('/admin/data_stock/' . $book->id) }}">
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit" class="text-red-600 hover:underline">Remove</button>
+                  </form>
+              </div>
             </td>
           </tr>
         @endforeach
