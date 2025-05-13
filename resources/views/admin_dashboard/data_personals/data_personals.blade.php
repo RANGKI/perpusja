@@ -4,6 +4,8 @@
 
 @section('content')
   <h1 class="text-5xl font-bold mb-6 text-center">Personal Accounts</h1>
+    {{-- Success message --}}
+    @include('components.success')
 
   @if ($users->isEmpty())
       <p class="text-center text-gray-600 mt-4">No user accounts available.</p>
