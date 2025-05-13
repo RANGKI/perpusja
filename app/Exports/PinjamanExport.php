@@ -10,16 +10,21 @@ class PinjamanExport implements FromCollection, WithHeadings
 {
     public function collection()
     {
-        return DataPinjaman::select([
-            'id',
-            'user_id',
-            'book_id',
-            'tanggal_pinjam',
-            'tanggal_kembali',
-            'status',
-            'created_at',
-            'updated_at'
-        ])->get();
+        return DataPinjaman::with(['user', 'book'])->get()->map(function ($item) {
+            return [
+                'ID'               => $item->id,
+                'User ID'          => $item->user_id,
+                'Username'         => $item->user->username ?? '-',
+                'Email'            => $item->user->email ?? '-',
+                'Book ID'          => $item->book_id,
+                'Nama Buku'        => $item->book->nama_buku ?? '-',
+                'Tanggal Pinjam'   => $item->tanggal_pinjam,
+                'Tanggal Kembali'  => $item->tanggal_kembali ?? '-',
+                'Status'           => $item->status,
+                'Created At'       => $item->created_at,
+                'Updated At'       => $item->updated_at,
+            ];
+        });
     }
 
     public function headings(): array
@@ -27,13 +32,15 @@ class PinjamanExport implements FromCollection, WithHeadings
         return [
             'ID',
             'User ID',
+            'Username',
+            'Email',
             'Book ID',
+            'Nama Buku',
             'Tanggal Pinjam',
             'Tanggal Kembali',
             'Status',
             'Created At',
-            'Updated At'
+            'Updated At',
         ];
     }
 }
-
