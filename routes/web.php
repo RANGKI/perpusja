@@ -24,6 +24,7 @@ Route::middleware('auth.session')->group(function () {
         Route::get('/admin/data_personal', 'show')->name('personal.show');
         Route::get('/admin/data_personal/{id}/detail', 'show_detail')->name('personal.detail');
         Route::put('/admin/data_personal/{id}/update', 'update_data')->name('personal.update');
+        Route::delete('/admin/data_personal/{id}','delete_data')->name('personal.delete');
     });
 
     Route::controller(DataStockController::class)->group(function() {

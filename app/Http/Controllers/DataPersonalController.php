@@ -39,4 +39,12 @@ class DataPersonalController extends Controller
         return redirect('/admin/data_personal/' . $id . '/detail')->with('success', 'Data updated!');
     }
 
+    public function delete_data($id) {
+        $user = DataPersonal::findOrFail($id);
+        if ($user) {
+            $user->delete();
+            return redirect('/admin/data_personal/')->with('success', 'Data Deleted!');
+        }
+    }
+
 }
