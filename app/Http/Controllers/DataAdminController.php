@@ -27,12 +27,19 @@ class DataAdminController extends Controller
 
         
         $user = DataAdmin::findOrFail($id);
-        $user->update([
+        if ($validated['password'] == $user->password) {
+            $user->update([
             'username' => $validated['username'],
-            'email' => $validated['email'],
-            'password' => bcrypt($validated['password']), 
+            'email' => $validated['email'], 
         ]);
-
+        } else {
+            $user->update([
+                'username' => $validated['username'],
+                'email' => $validated['email'],
+                'password' => bcrypt($validated['password']), 
+            ]);
+        }
+        session(['username' => $validated['username']]);
         return redirect('/admin/data_admin/' . $id . '/detail')->with('success', 'Data updated!');
     }
 
