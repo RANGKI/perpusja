@@ -43,7 +43,7 @@
         </div>
 
         <div class="absolute bottom-6 left-6 flex items-center space-x-3">
-    <div class="w-10 h-10 rounded-full bg-gray-300"></div>
+    <img src="{{ asset('storage/' . session('image_path')) }}" alt="Admin Image" class="w-12 h-12 object-cover rounded-full">
     <span class="text-xl font-semibold">{{ session('username') }}</span>
 
     <form action="{{ url('/logout') }}" method="POST">

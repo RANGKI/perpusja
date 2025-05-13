@@ -25,6 +25,7 @@ class LoginController extends Controller
             Session::put('user_type', 'admin');
             Session::put('user_id', $admin->id);
             Session::put('username', $admin->username);
+            Session::put('image_path', $admin->image_path);
             $request->session()->regenerate();
             return redirect()->intended('/admin/data_admin');
         } else {

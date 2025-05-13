@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\DataAdmin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class DataAdminController extends Controller
 {
@@ -39,23 +40,34 @@ class DataAdminController extends Controller
         return view('admin_dashboard.data_admins.create');
     }
 
-    public function create_data(Request $request) {
-        $validated = $request->validate([
-            'username' => 'required|string|max:255|unique:data_admin,username',
-            'email' => 'required|email|max:255|unique:data_admin,email',
-            'password' => 'required|string|min:6',
-        ]);
 
-        
-        DataAdmin::create([
-            'image_path' => 'default.jpg', 
-            'username' => $validated['username'],
-            'email' => $validated['email'],
-            'password' => bcrypt($validated['password']),
-        ]);
+public function create_data(Request $request)
+{
+    $validated = $request->validate([
+        'username' => 'required|string|max:255|unique:data_admin,username',
+        'email' => 'required|email|max:255|unique:data_admin,email',
+        'password' => 'required|string|min:6',
+        'image_path' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', 
+    ]);
 
-        return redirect('/admin/data_admin')->with('success', 'Admin created successfully!');
+    $imageName = 'default.jpg';
+    if ($request->hasFile('image_path')) {
+        $image = $request->file('image_path');
+        $randomName = Str::random(20) . '.' . $image->getClientOriginalExtension();
+        $image->storeAs('public/image/admins', $randomName);
+        $imageName = '/image/admins/' . $randomName;
     }
+
+    DataAdmin::create([
+        'image_path' => $imageName,
+        'username' => $validated['username'],
+        'email' => $validated['email'],
+        'password' => bcrypt($validated['password']),
+    ]);
+
+    return redirect('/admin/data_admin')->with('success', 'Admin created successfully!');
+}
+
 
     public function delete_data($id) {
         $admin = DataAdmin::findOrFail($id);
