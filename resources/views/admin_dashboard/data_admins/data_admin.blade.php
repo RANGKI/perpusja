@@ -5,6 +5,8 @@
 @section('content')
   <h1 class="text-5xl font-bold mb-6 text-center">Admins</h1>
 
+  {{-- Success message --}}
+  @include('components.success')
   @if ($admins->isEmpty())
       <p class="text-center text-gray-600 mt-4">No admins available.</p>
   @else

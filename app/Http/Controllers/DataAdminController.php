@@ -44,7 +44,10 @@ class DataAdminController extends Controller
         $user->image_path = 'image/admins/' . $imageName;
 
         // Update session image path
-        session(['image_path' => $user->image_path]);
+        if ($user->username == session('username')) {
+            session(['image_path' => $user->image_path]);
+            session(['username' => $validated['username']]);
+        }
     }
 
     // Update password only if changed
@@ -60,7 +63,6 @@ class DataAdminController extends Controller
     $user->save();
 
     // Update session username
-    session(['username' => $validated['username']]);
 
     return redirect('/admin/data_admin/' . $id . '/detail')->with('success', 'Data updated!');
 }
