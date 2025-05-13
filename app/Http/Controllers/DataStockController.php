@@ -36,6 +36,14 @@ class DataStockController extends Controller
         return redirect('/admin/data_stock/' . $id . '/detail')->with('success', 'Data updated!');
     }
 
+    public function delete_data($id) {
+        $book = DataStock::findOrFail($id);
+        if ($book) {
+            $book->delete();
+            return redirect('/admin/data_stock/')->with('success', 'Data deleted!');
+        }
+    }
+
 
     
 }

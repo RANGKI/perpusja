@@ -31,6 +31,7 @@ Route::middleware('auth.session')->group(function () {
         Route::get('/admin/data_stock', 'show')->name('stock.show');
         Route::get('/admin/data_stock/{id}/detail', 'show_detail')->name('stock.detail');
         Route::put('/admin/data_stock/{id}/update', 'update_data')->name('stock.update');
+        Route::delete('/admin/data_stock/{id}','delete_data')->name('stock.delete');
     });
 
     Route::get('/admin/data_pinjaman', [DataPinjamanController::class, 'show'])->name('pinjaman.show');
