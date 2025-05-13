@@ -28,7 +28,7 @@
                 <a href="{{ url('/admin/data_admin/' . $admin->id . '/detail') }}" class="text-indigo-600 hover:underline">
                   ✎
                 </a>
-                <form onsubmit="event.preventDefault(); window.dispatchEvent(new CustomEvent('open-delete-confirm', { detail: { action: this } }))" method="POST" action="{{ url('/admin/data_personal/' . $admin->id) }}">
+                <form onsubmit="event.preventDefault(); window.dispatchEvent(new CustomEvent('open-delete-confirm', { detail: { action: this } }))" method="POST" action="{{ url('/admin/data_admin/' . $admin->id) }}">
                       @csrf
                       @method('DELETE')
                       <button type="submit" class="text-red-600 hover:underline">Remove</button>

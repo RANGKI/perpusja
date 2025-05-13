@@ -56,4 +56,12 @@ class DataAdminController extends Controller
 
         return redirect('/admin/data_admin')->with('success', 'Admin created successfully!');
     }
+
+    public function delete_data($id) {
+        $admin = DataAdmin::findOrFail($id);
+        if ($admin) {
+            $admin->delete();
+            return redirect('/admin/data_admin')->with('success', 'Data deleted!');
+        }
+    }
 }

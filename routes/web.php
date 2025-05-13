@@ -42,5 +42,6 @@ Route::middleware('auth.session')->group(function () {
         Route::put('/admin/data_admin/{id}/update', 'update_data')->name('admin.update');
         Route::get('/admin/data_admin/create', 'show_create')->name('admin.create');
         Route::post('/admin/data_admin/create', 'create_data')->name('admin.store');
+        Route::delete('/admin/data_admin/{id}','delete_data')->name('admin.delete');
     });
 });
