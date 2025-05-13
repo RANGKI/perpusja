@@ -30,12 +30,10 @@
                 <a href="{{ url('/admin/data_personal/' . $user->id . '/detail') }}" class="text-indigo-600 hover:underline">
                   View Details
                 </a>
-                <form action="{{ url('/admin/data_personal/' . $user->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this user?');">
-                  @csrf
-                  @method('DELETE')
-                  <button type="submit" class="text-red-600 hover:underline">
-                    Remove
-                  </button>
+                <form onsubmit="event.preventDefault(); window.dispatchEvent(new CustomEvent('open-delete-confirm', { detail: { action: this } }))" method="POST" action="{{ url('/admin/data_personal/' . $user->id) }}">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="text-red-600 hover:underline">Remove</button>
                 </form>
               </div>
             </td>
