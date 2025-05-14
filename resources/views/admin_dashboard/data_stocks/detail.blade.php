@@ -42,7 +42,7 @@
 
         <div class="mb-4">
           <label class="block font-semibold mb-1">Status</label>
-          <input type="text" value="{{ $book->jumlah <= 5 ? 'Out of Stock' : 'Available' }}" readonly
+          <input type="text" value="{{ $book->jumlah <= 0 ? 'Out of Stock' : 'Available' }}" readonly
             class="w-full px-4 py-2 border rounded {{ $book->jumlah <= 5 ? 'text-red-500' : 'text-green-600' }}">
         </div>
 
