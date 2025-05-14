@@ -16,6 +16,16 @@
       <p class="text-center text-gray-600 mt-4">No loan data available.</p>
   @else
       <div class="overflow-x-auto">
+        <form action="{{ route('pinjaman.show') }}" method="GET" class="mb-4 flex justify-end">
+    <input type="text" name="search" value="{{ request('search') }}"
+           placeholder="Search username, email, or book..."
+           class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+    <button type="submit"
+            class="ml-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">
+        🔍 Search
+    </button>
+</form>
+
           <table class="min-w-full bg-white rounded shadow text-left">
               <thead class="bg-indigo-600 text-white">
                   <tr>

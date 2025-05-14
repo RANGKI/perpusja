@@ -6,10 +6,13 @@
     <title>@yield('title', 'Perpusja')</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
     </head>
-    <body class="font-[Poppins] bg-gray-900">
+    <body class="font-[Poppins] text-sm bg-gray-900">
     <div class="flex h-screen">
         <!-- Sidebar -->
         <nav class="w-[300px] bg-[#3D3BA0] text-white flex flex-col items-center p-5 relative">
@@ -42,9 +45,9 @@
             </ul>
         </div>
 
-        <div class="absolute bottom-6 left-6 flex items-center space-x-3">
+<div class="absolute bottom-6 left-6 flex items-center space-x-3">
     <img src="{{ asset('storage/' . session('image_path')) }}" alt="Admin Image" class="w-12 h-12 object-cover rounded-full">
-    <span class="text-xl font-semibold">{{ session('username') }}</span>
+    <span class="text-lg font-semibold">{{ session('username') }}</span>
 
     <form action="{{ url('/logout') }}" method="POST">
         @csrf
