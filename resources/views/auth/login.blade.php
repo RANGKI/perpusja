@@ -50,10 +50,11 @@
             <span class="text-gray-500 text-sm">or login with</span>
         </div>
 
-        <button type="button" class="w-full mt-3 flex items-center justify-center border border-gray-300 rounded-lg py-2 hover:bg-gray-50">
-            <img src="https://www.google.com/favicon.ico" alt="Google" class="h-5 w-5 mr-2">
-            <span class="text-gray-700 font-semibold">Google</span>
-        </button>
+        <a href="http://127.0.0.1:8000/login/auth/google/redirect" class="w-full mt-3 flex items-center justify-center border border-gray-300 rounded-lg py-2 hover:bg-gray-50">
+    <img src="https://www.google.com/favicon.ico" alt="Google" class="h-5 w-5 mr-2">
+    <span class="text-gray-700 font-semibold">Google</span>
+        </a>
+
     </form>
 </div>
 @endsection

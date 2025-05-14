@@ -4,6 +4,7 @@ use App\Http\Controllers\DataAdminController;
 use App\Http\Controllers\DataPersonalController;
 use App\Http\Controllers\DataPinjamanController;
 use App\Http\Controllers\DataStockController;
+use App\Http\Controllers\GoogleLoginController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,6 +17,12 @@ Route::controller(LoginController::class)->group(function() {
     Route::get('/login', 'show')->name('login');
     Route::post('/login', 'login');
     Route::post('/logout', 'logout')->name('logout');
+});
+
+Route::controller(GoogleLoginController::class)->group(function() {
+    Route::get('/login/auth/google/redirect', 'redirect')->name('login.google');
+    // Route::post('/login', 'login');
+    // Route::post('/logout', 'logout')->name('logout');
 });
 
 // Protected routes (require authentication)
