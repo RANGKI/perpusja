@@ -11,7 +11,7 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class DataStockController extends Controller
 {
-    public function show(Request $request){
+    public function show(Request $request) {
     $query = DataStock::query();
 
     if ($search = $request->input('search')) {
