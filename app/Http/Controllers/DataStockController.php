@@ -11,10 +11,18 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class DataStockController extends Controller
 {
-    public function show() {
-        $books = DataStock::paginate(10); // Paginate with 10 items per page
-        return view('admin_dashboard.data_stocks.data_stock', compact('books'));
+    public function show(Request $request) {
+    $query = DataStock::query();
+
+    if ($search = $request->input('search')) {
+        $query->where('nama_buku', 'like', "%$search%")
+              ->orWhere('kode_buku', 'like', "%$search%");
     }
+
+    $books = $query->paginate(10);
+    return view('admin_dashboard.data_stocks.data_stock', compact('books'));
+}
+
 
     public function show_detail($id) {
         $book = DataStock::findOrFail($id);
