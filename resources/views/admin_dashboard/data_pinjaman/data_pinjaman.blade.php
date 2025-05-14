@@ -3,6 +3,7 @@
 @section('title', 'Data Pinjaman')
 
 @section('content')
+@include('components.error')
   <h1 class="text-5xl font-bold mb-6 text-center">Data Pinjaman</h1>
 
   <div class="flex justify-end mb-4">

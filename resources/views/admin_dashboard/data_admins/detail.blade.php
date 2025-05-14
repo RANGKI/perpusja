@@ -6,7 +6,7 @@
 
 {{-- Success message --}}
 @include('components.success')
-
+@include('components.error')
 <div class="container mx-auto px-6 py-10">
   <div class="flex flex-col md:flex-row items-center md:items-start justify-between border p-6 rounded-lg shadow-md bg-white">
     

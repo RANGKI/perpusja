@@ -7,6 +7,7 @@
 
   {{-- Success message --}}
   @include('components.success')
+  @include('components.error')
   @if ($admins->isEmpty())
       <p class="text-center text-gray-600 mt-4">No admins available.</p>
   @else

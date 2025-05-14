@@ -4,7 +4,7 @@
 
 @section('content')
   <h1 class="text-5xl font-bold mb-6 text-center">Data Stock</h1>
-
+@include('components.error')
   {{-- Success message --}}
   @include('components.success')
   <div class="flex justify-end mb-4">

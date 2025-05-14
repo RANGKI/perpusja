@@ -6,6 +6,7 @@
   <h1 class="text-5xl font-bold mb-6 text-center">Personal Accounts</h1>
     {{-- Success message --}}
     @include('components.success')
+    @include('components.error')
 
   @if ($users->isEmpty())
       <p class="text-center text-gray-600 mt-4">No user accounts available.</p>
