@@ -9,9 +9,6 @@ use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 // Public routes (no authentication required)
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::controller(LoginController::class)->group(function() {
     Route::get('/login', 'show')->name('login');
@@ -25,6 +22,10 @@ Route::controller(GoogleLoginController::class)->group(function() {
     // Route::post('/login', 'login');
     // Route::post('/logout', 'logout')->name('logout');
 });
+
+Route::get('/', function() {
+        return view('user.landing');
+    });
 
 // Protected routes (require authentication)
 Route::middleware('auth.session')->group(function () {
