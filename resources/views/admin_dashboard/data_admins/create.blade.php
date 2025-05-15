@@ -13,7 +13,7 @@
     <!-- Profile Image Upload Preview -->
     <div class="mb-6 md:mb-0 md:mr-8 flex justify-center">
       <label for="image" class="cursor-pointer">
-        <div class="w-40 h-40 border rounded-lg flex items-center justify-center overflow-hidden bg-gray-100">
+        <div class="w-80 h-80 border rounded-lg flex items-center justify-center overflow-hidden bg-gray-100">
           <img id="preview-image" src="" alt="No Image" class="hidden object-cover w-full h-full">
           <span id="no-image-text" class="text-gray-400">Klik untuk upload</span>
         </div>
@@ -46,7 +46,7 @@
           <input type="password" name="password" class="w-full px-4 py-2 border rounded focus:outline-none" required>
         </div>
 
-        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-2 rounded shadow">
+        <button type="submit" class="bg-[#3D3BA0] hover:bg-indigo-700 text-white font-semibold px-6 py-2 rounded shadow">
           Tambah Admin
         </button>
       </form>

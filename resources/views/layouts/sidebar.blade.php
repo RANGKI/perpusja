@@ -16,29 +16,29 @@
     <div class="flex h-screen">
         <!-- Sidebar -->
         <nav class="w-[300px] bg-[#3D3BA0] text-white flex flex-col items-center p-5 relative">
-        <h1 class="text-5xl font-bold mb-16 mt-5 leading-none">Perpus<span class="text-white">J</span><span class="text-[#3D3BA0] bg-white px-1 rounded">a</span>
-            <div class="text-sm mt-1 font-normal">Admin</div>
+        <div class="text-xl mt-1 font-bold">Admin</div>
+        <h1 class="text-5xl font-bold mb-16 mt-0 leading-none">Perpus<span class="text-[#3D3BA0] bg-white px-1 rounded">Ja</span>
         </h1>
 
         <div class="w-full">
             <ul class="space-y-6">
             <li>
-                <a href="/admin/data_personal" class="flex items-center bg-white text-black text-xl px-4 py-4 mx-2 rounded-lg shadow hover:bg-gray-100 transition-all">
+                <a href="/admin/data_personal" class="flex items-center bg-white text-black text-xl px-4 py-4 mx-2 rounded-lg shadow hover:bg-blue-300 transition-all">
                 <i class="fa-solid fa-user mr-3 text-2xl"></i> Data Personal
                 </a>
             </li>
             <li>
-                <a href="/admin/data_stock" class="flex items-center bg-white text-black text-xl px-4 py-4 mx-2 rounded-lg shadow hover:bg-gray-100 transition-all">
+                <a href="/admin/data_stock" class="flex items-center bg-white text-black text-xl px-4 py-4 mx-2 rounded-lg shadow hover:bg-blue-300 transition-all">
                 <i class="fa-solid fa-store mr-3 text-2xl"></i> Data Stock
                 </a>
             </li>
             <li>
-                <a href="/admin/data_pinjaman" class="flex items-center bg-white text-black text-xl px-4 py-4 mx-2 rounded-lg shadow hover:bg-gray-100 transition-all">
+                <a href="/admin/data_pinjaman" class="flex items-center bg-white text-black text-xl px-4 py-4 mx-2 rounded-lg shadow hover:bg-blue-300 transition-all">
                 <i class="fa-solid fa-lock mr-3 text-2xl"></i> Data Pinjaman
                 </a>
             </li>
             <li>
-                <a href="/admin/data_admin" class="flex items-center bg-white text-black text-xl px-4 py-4 mx-2 rounded-lg shadow hover:bg-gray-100 transition-all">
+                <a href="/admin/data_admin" class="flex items-center bg-white text-black text-xl px-4 py-4 mx-2 rounded-lg shadow hover:bg-blue-300 transition-all">
                 <i class="fa-solid fa-gears mr-3 text-2xl"></i> Admins
                 </a>
             </li>

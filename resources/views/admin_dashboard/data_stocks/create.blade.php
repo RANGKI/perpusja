@@ -10,7 +10,7 @@
     <!-- Book Cover Upload -->
     <div class="mb-6 md:mb-0 md:mr-8 flex justify-center">
       <label for="cover" class="cursor-pointer">
-        <div id="coverPreview" class="w-40 h-56 border rounded-lg flex items-center justify-center bg-gray-100 overflow-hidden">
+        <div id="coverPreview" class="w-64 h-96 border rounded-lg flex items-center justify-center bg-gray-100 overflow-hidden">
           <span class="text-gray-400" id="coverText">No Cover</span>
           <img id="previewImage" src="#" alt="Preview" class="hidden w-full h-full object-cover" />
         </div>

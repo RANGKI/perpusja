@@ -19,12 +19,12 @@
            placeholder="Search book..."
            class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400">
     <button type="submit"
-            class="ml-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">
+            class="ml-2 px-4 py-2 bg-[#3D3BA0] text-white rounded-lg hover:bg-indigo-800">
         🔍 Search
     </button>
 </form>
     <table class="min-w-full bg-white rounded shadow text-left">
-      <thead class="bg-indigo-600 text-white">
+      <thead class="bg-[#3D3BA0] text-white">
         <tr>
           <th class="px-6 py-3">Nama Buku</th>
           <th class="px-6 py-3">Jumlah</th>
@@ -68,7 +68,7 @@
   </div>
 
   <div class="mt-10 flex justify-center">
-    <a href="{{ url('/admin/data_stock/create') }}" class="flex items-center gap-2 px-6 py-3 bg-indigo-700 hover:bg-indigo-800 text-white font-semibold rounded-2xl shadow-lg">
+    <a href="{{ url('/admin/data_stock/create') }}" class="flex items-center gap-2 px-6 py-3 bg-[#3D3BA0] hover:bg-indigo-900 text-white font-semibold rounded-2xl shadow-lg">
       <span class="text-2xl">+</span> Add Book
     </a>
   </div>

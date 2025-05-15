@@ -21,6 +21,7 @@ Route::controller(LoginController::class)->group(function() {
 
 Route::controller(GoogleLoginController::class)->group(function() {
     Route::get('/login/auth/google/redirect', 'redirect')->name('login.google');
+    Route::get('/login/auth/google/callback','handleGoogleCallback')->name('login.google.callback');
     // Route::post('/login', 'login');
     // Route::post('/logout', 'logout')->name('logout');
 });

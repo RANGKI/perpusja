@@ -13,7 +13,7 @@
   @else
       <div class="overflow-x-auto">
           <table class="min-w-full bg-white rounded shadow text-left">
-              <thead class="bg-indigo-600 text-white">
+              <thead class="bg-[#3D3BA0] text-white">
                   <tr>
                       <th class="px-6 py-3">Profile</th>
                       <th class="px-6 py-3">Username</th>

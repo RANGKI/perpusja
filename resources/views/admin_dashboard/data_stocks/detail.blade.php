@@ -12,7 +12,7 @@
     <!-- Book Cover Image -->
     <div class="mb-6 md:mb-0 md:mr-8 flex justify-center">
       <label for="image_path" class="cursor-pointer">
-        <div class="w-48 h-72 border rounded-lg overflow-hidden">
+        <div class="w-64 h-96 border rounded-lg overflow-hidden">
           <img id="book-cover-preview" src="{{ asset('storage/' . $book->image_path) }}" alt="Book Cover" class="w-full h-full object-cover">
         </div>
       </label>

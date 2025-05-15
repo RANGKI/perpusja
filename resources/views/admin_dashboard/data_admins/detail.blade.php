@@ -13,7 +13,7 @@
     <!-- Profile Image Upload Preview -->
     <div class="mb-6 md:mb-0 md:mr-8 flex justify-center">
       <label for="image_path" class="cursor-pointer">
-        <div class="w-40 h-40 border rounded-lg flex items-center justify-center overflow-hidden bg-gray-100">
+        <div class="w-80 h-80 border rounded-lg flex items-center justify-center overflow-hidden bg-gray-100">
           <img id="preview-image" src="{{ asset('storage/' . $admin->image_path) }}" alt="Profile" class="object-cover w-full h-full">
         </div>
       </label>

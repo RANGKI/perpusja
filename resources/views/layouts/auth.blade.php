@@ -6,7 +6,7 @@
     <title>@yield('title') - MyApp</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100">
+<body class="bg-blue-200">
     <div class="min-h-screen flex items-center justify-center">
         @yield('content')
     </div>
